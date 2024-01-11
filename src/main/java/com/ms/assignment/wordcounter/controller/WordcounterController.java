@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-import java.util.List;
 
 @RestController
 @RequestMapping("/word-counter")
@@ -21,7 +20,7 @@ public class WordcounterController {
     }
     @PostMapping("/add-words")
     public ResponseEntity addWords(@RequestBody String words) {
-        if(words == null && words.isEmpty()) {
+        if(words == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         String[] wordArray = words.trim().split("\\s+");
