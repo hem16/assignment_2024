@@ -13,11 +13,8 @@ import java.util.Arrays;
 public class WordcounterController {
 
     @Autowired
-    private final WordcounterService wordcounterService;
+    private WordcounterService wordcounterService;
 
-    public WordcounterController(WordcounterService wordcounterService) {
-        this.wordcounterService = wordcounterService;
-    }
     @PostMapping("/add-words")
     public ResponseEntity addWords(@RequestBody String words) {
         if(words == null) {
